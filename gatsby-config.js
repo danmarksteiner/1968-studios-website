@@ -49,14 +49,5 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Avenir Next\:300,400,700`,
-        ],
-        display: 'swap'
-      }
-    },
   ],
 };

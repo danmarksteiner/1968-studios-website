@@ -1,24 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
-import { Link } from 'gatsby'
 import '../components/base.css'
 import '../components/app.scss'
 
-class RootIndex extends React.Component {
+class NotFound extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      navOpen: false
+    }
+  }
+
   render() {
-    // const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    // const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-    // const [author] = get(this, 'props.data.allContentfulPerson.edges')
+
     const backgroundDesktop = get(this, 'props.data.contentfulBackgroundImageDesktop.backgroundImageAsset')
     const backgroundMobile = get(this, 'props.data.contentfulBackgroundImageMobile.backgroundImageAssetMobile')
     const studioLocations = get(this.props, 'data.allContentfulStudioLocation')
     const websiteLogo = get(this.props, 'data.contentfulWebsiteLogo.websiteLogoImage')
 
     return (
-      <div className="app">
+        <div className="app">
         <Helmet>
         <meta
         name="viewport"
@@ -26,9 +31,9 @@ class RootIndex extends React.Component {
         />
         <meta
         name="description"
-        content="1968 Studios - World Of Stories"
+        content="1968 Studios - World Of Stories Contact Us"
         />
-        <title>1968 Studios - World Of Stories</title>
+        <title>1968 Studios - World Of Stories - Contact Us</title>
         </Helmet>
         <div className="container">
           <Img
@@ -55,20 +60,19 @@ class RootIndex extends React.Component {
                   <li key={location.locationName}>{location.locationName}</li>
                 ))}
               </ul>
-              <div className="studio-logo">
-                <Img
-                  fluid={{
-                    ...websiteLogo.fluid,
-                    aspectRatio: 1020 / 1291,
-                  }}
-                  fadeIn
-                  alt={websiteLogo.description}
-                />
-                <h2>World of stories</h2>
+              <div className="contact-mail-address">
+                  <h2>Page Not Found</h2>
               </div>
-              <div className="contact-btn">
-                <Link to="/contact/">Contact Us</Link>
-              </div>
+            </div>
+            <div className="studio-logo-contact">
+              <Img
+                fluid={{
+                  ...websiteLogo.fluid,
+                  aspectRatio: 1020 / 1291,
+                }}
+                fadeIn
+                alt={websiteLogo.description}
+              />
             </div>
         </div>
       </div>
@@ -76,10 +80,10 @@ class RootIndex extends React.Component {
   }
 }
 
-export default RootIndex
+export default NotFound
 
-export const pageQuery = graphql`
-  query WebsiteQuery {
+export const contactQuery = graphql`
+  query NotFoundQuery {
     contentfulBackgroundImageDesktop {
       backgroundImageAsset {
         id
@@ -105,6 +109,9 @@ export const pageQuery = graphql`
         }
         description
       }
+    }
+    contentfulCommunicationPolicy {
+      policyTitle
     }
     contentfulCommunicationPolicyPolicyTextBodyRichTextNode {
       json
