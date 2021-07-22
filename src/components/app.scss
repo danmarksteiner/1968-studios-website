@@ -1,0 +1,49 @@
+.background-mobile {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  @media (orientation: landscape) {
+    display: none;
+  }
+}
+.background-desktop {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  @media (orientation: portrait) {
+    display: none;
+  }
+}
+.main-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.studio-locations {
+  font-family: 'Avenir Next', sans-serif;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 10px; 
+  grid-template-areas: 
+    ". . ."; 
+  li {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+}
+.studio-logo {
+  img {
+    margin: auto;
+    display: block;
+  }
+}
