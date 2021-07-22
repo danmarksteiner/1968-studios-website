@@ -28,7 +28,7 @@ class RootIndex extends React.Component {
           name="description"
           content="1968 Studios - World Of Stories Contact Us"
           />
-          <meta name="theme-color" content="#00465d" />
+          <meta name="theme-color" content="#2d283c" />
           <title>1968 Studios - World Of Stories - Contact Us</title>
         </Helmet>
         <div className="container">
