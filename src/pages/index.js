@@ -20,15 +20,16 @@ class RootIndex extends React.Component {
     return (
       <div className="app">
         <Helmet>
-        <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-        />
-        <meta
-        name="description"
-        content="1968 Studios - World Of Stories"
-        />
-        <title>1968 Studios - World Of Stories</title>
+          <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+          />
+          <meta
+          name="description"
+          content="1968 Studios - World Of Stories Contact Us"
+          />
+          <meta name="theme-color" content="#00465d" />
+          <title>1968 Studios - World Of Stories - Contact Us</title>
         </Helmet>
         <div className="container">
           <Img
