@@ -31,10 +31,10 @@ class NotFound extends Component {
           />
           <meta
           name="description"
-          content="1968 Studios - World Of Stories Contact Us"
+          content="1968 Studios - World Of Stories 404"
           />
           <meta name="theme-color" content="#2d283c" />
-          <title>1968 Studios - World Of Stories - Contact Us</title>
+          <title>1968 Studios - World Of Stories - 404</title>
         </Helmet>
         <div className="container">
           <Img
