@@ -9,13 +9,11 @@ import '../components/app.scss'
 
 class RootIndex extends React.Component {
   render() {
-    // const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    // const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-    // const [author] = get(this, 'props.data.allContentfulPerson.edges')
     const backgroundDesktop = get(this, 'props.data.contentfulBackgroundImageDesktop.backgroundImageAsset')
     const backgroundMobile = get(this, 'props.data.contentfulBackgroundImageMobile.backgroundImageAssetMobile')
     const studioLocations = get(this.props, 'data.allContentfulStudioLocation')
     const websiteLogo = get(this.props, 'data.contentfulWebsiteLogo.websiteLogoImage')
+    const websiteLogoSubtitle = get(this.props, 'data.contentfulWebsiteLogo')
 
     return (
       <div className="app">
@@ -26,10 +24,10 @@ class RootIndex extends React.Component {
           />
           <meta
           name="description"
-          content="1968 Studios - World Of Stories"
+          content="1968 Studios - Worlds Of Stories"
           />
           <meta name="theme-color" content="#2d283c" />
-          <title>1968 Studios - World Of Stories</title>
+          <title>1968 Studios - Worlds Of Stories</title>
         </Helmet>
         <div className="container">
           <Img
@@ -65,7 +63,7 @@ class RootIndex extends React.Component {
                   fadeIn
                   alt={websiteLogo.description}
                 />
-                <h2>World of stories</h2>
+                <h2>{websiteLogoSubtitle.subtitle}</h2>
               </div>
               <div className="contact-btn">
                 <Link to="/contact/">Contact Us</Link>
@@ -130,6 +128,7 @@ export const pageQuery = graphql`
         }
         description
       }
+      subtitle
     }
   }
 `
